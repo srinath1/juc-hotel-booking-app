@@ -25,7 +25,7 @@ function RoomsForm({
   const onFinish = async (values: any) => {
     try {
       setLoading(true);
-      const newUrls = await UploadImageToFirebaseAndReturnUrls(uploadedFiles);
+      const newUrls = await UploadImageToFirebaseAndReturnUrls(uploadedFiles)as string[]) || null;
       values.media = [...existingMedia, ...newUrls];
       let response: any = null;
 
